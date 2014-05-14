@@ -1,11 +1,17 @@
 module BootstrapHelper
   def bootstrap_flash_class(level)
-    case level
-    when :notice  then :"alert alert-info"
-    when :success then :"alert alert-success"
-    when :error   then :"alert alert-danger"
-    when :alert   then :"alert alert-warning"
-    end
+    [:alert].tap do |list|
+      list << case level.to_s
+      when 'notice'
+        :'alert-info'
+      when 'success'
+        :'alert-success'
+      when 'error'
+        :'alert-danger'
+      when 'alert'
+        :'alert-warning'
+      end
+    end.compact.join ' '
   end
 
   def icon(*icons, text)

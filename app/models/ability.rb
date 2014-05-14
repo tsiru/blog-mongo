@@ -2,7 +2,6 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.first
     can :manage, :all
     cannot :destroy, user
     # Define abilities for the passed in user here. For example:

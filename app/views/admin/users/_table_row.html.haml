@@ -2,7 +2,7 @@
   %td=user.id
   %td
     =link_to 'edit', [:edit, :admin, user], class: %i(btn btn-default) if can? :edit, user
-    =link_to 'destroy', [:admin, user], class: %i(btn btn-danger), method: :delete, confirm: 'Are U sure?' if can? :destroy, user
+    =link_to 'destroy', [:admin, user], class: %i(btn btn-danger), method: :delete, data: { confirm: 'Are U sure?' } if can? :destroy, user
   %td=user.email
   %td=user.first_name
   %td=user.last_name

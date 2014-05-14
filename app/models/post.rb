@@ -1,6 +1,6 @@
 class Post
   include Mongoid::Document
-  include Mongoid::Versioning
+  # include Mongoid::Versioning
   include Mongoid::Timestamps
 
   field :_id,   type: String, default: -> { title.parameterize }
