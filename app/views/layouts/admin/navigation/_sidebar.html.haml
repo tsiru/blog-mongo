@@ -1,0 +1,11 @@
+-if can? :manage, :users
+  %ul.nav.nav-sidebar.nav-pills.nav-stacked
+    - path_active admin_users_path do |path, active|
+      =content_tag :li, class: path_active_class(active) do
+        =link_to icon(:users, 'Użytkownicy'), path
+
+-if can? :manage, :posts
+  %ul.nav.nav-sidebar.nav-pills.nav-stacked
+    - path_active admin_posts_path do |path, active|
+      =content_tag :li, class: path_active_class(active) do
+        =link_to icon(:'file-text-o', 'Podstrony'), path

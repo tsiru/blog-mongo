@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '~> 3.2.14'
+gem 'rails', '>= 4'
 gem 'responders'
 
 # database
@@ -27,7 +27,7 @@ gem 'devise'
 gem 'cancan'
 
 # forms
-gem 'simple_form'
+gem 'simple_form', '3.1.0.rc1', github: 'plataformatec/simple_form'
 
 # nawigacja
 gem "breadcrumbs_on_rails"
@@ -47,9 +47,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Pagination
 gem 'kaminari'
-
-# sorting
-gem "meta_search"
 
 # slugs
 gem 'friendly_id'

@@ -124,11 +124,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta_search (1.1.3)
-      actionpack (~> 3.1)
-      activerecord (~> 3.1)
-      activesupport (~> 3.1)
-      polyamorous (~> 0.5.0)
     metaclass (0.0.4)
     mime-types (1.25.1)
     mini_portile (0.6.0)
@@ -160,8 +155,6 @@ GEM
     parallel (1.0.0)
     parallel_tests (0.16.10)
       parallel
-    polyamorous (0.5.0)
-      activerecord (~> 3.0)
     polyglot (0.3.4)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
@@ -300,7 +293,6 @@ DEPENDENCIES
   jquery-rails
   kaminari
   libv8
-  meta_search
   mocha
   mongoid
   paperclip (~> 4.1)

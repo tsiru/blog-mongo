@@ -6,11 +6,15 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation,
+    :remember_me, :first_name, :last_name
 
   ## Database authenticatable
-  field :email,              type: String, default: ""
-  field :encrypted_password, type: String, default: ""
+  field :_id,                type: String, default: -> { "#{first_name} #{last_name}".parameterize }
+  field :first_name,         type: String
+  field :last_name,          type: String
+  field :email,              type: String
+  field :encrypted_password, type: String, default: ''
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -25,6 +29,12 @@ class User
   field :last_sign_in_at,    type: Time
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
+
+  validates :first_name, :last_name, :email, presence: true
+
+  def humanize
+    "#{first_name} #{last_name}"
+  end
 
   ## Confirmable
   # field :confirmation_token,   type: String

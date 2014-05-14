@@ -1,0 +1,15 @@
+/ Fixed navbar
+.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to icon(:home, 'strona glowna'), root_path
+        = render partial: 'shared/navigation/auth'
+    / /.nav-collapse

@@ -1,0 +1,12 @@
+-if @users.any?
+  %table.table
+    %thead
+      %tr
+        %th id
+        %th
+        %th email
+        %th imię
+        %th nazwisko
+    %tbody
+      = render collection: @users, partial: 'table_row', as: :user
+
