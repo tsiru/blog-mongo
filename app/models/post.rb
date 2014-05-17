@@ -7,14 +7,19 @@ class Post
   belongs_to :author, class_name: 'User'
   belongs_to :category
 
-  field :_id,   type: String, default: -> { title.parameterize }
+  field :_id,   type: String, default: -> { "#{title}".parameterize }
   field :title, type: String
   field :lead,  type: String
   field :body,  type: String
 
   field :published_at, type: Time
 
-  validates :title, :body, presence: true
+  validates :title, :body, :category_id, presence: true
+
+  def tags=(value)
+    value = value.split(',').map(&:strip) if value.is_a?(String)
+    self[:tags] = value
+  end
 
   def humanize
     "#{title}"

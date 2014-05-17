@@ -1,10 +1,12 @@
 Blog::Application.routes.draw do
-  Mercury::Engine.routes
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   devise_for :users
 
-  root to: 'posts#index'
+  root to: 'posts#index', via: :get
 
   resources :posts, only: :show
+  resources :categories, only: :show
+  resources :users, only: :show
 
   namespace :admin do
     root to: 'dashboard#show'
@@ -12,7 +14,7 @@ Blog::Application.routes.draw do
       post :recover, on: :member
     end
     resources :posts, except: :show
-    resources :categories
+    resources :categories, except: :show
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

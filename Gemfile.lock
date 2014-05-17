@@ -57,6 +57,10 @@ GEM
       railties (>= 3.0)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
+    bootsy (2.0.9)
+      carrierwave (~> 0.10.0)
+      mini_magick (~> 3.7.0)
+      remotipart (~> 1.2.1)
     breadcrumbs_on_rails (2.3.0)
     bson (2.2.3)
     builder (3.2.2)
@@ -78,6 +82,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.4)
@@ -140,12 +149,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mercury-rails (0.3.1)
-      coffee-script
-      paperclip
-      rails (>= 3.1.0)
     metaclass (0.0.4)
     mime-types (1.25.1)
+    mini_magick (3.7.0)
+      subexec (~> 0.2.1)
     mini_portile (0.6.0)
     minitest (5.3.3)
     mocha (1.1.0)
@@ -204,6 +211,7 @@ GEM
     raindrops (0.13.0)
     rake (10.3.1)
     ref (1.0.5)
+    remotipart (1.2.1)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rspec (2.14.1)
@@ -252,6 +260,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    subexec (0.2.3)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -294,6 +303,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-datepicker-rails
   bootstrap-sass (>= 3)
+  bootsy
   breadcrumbs_on_rails
   cancan
   capistrano (< 3)
@@ -314,7 +324,6 @@ DEPENDENCIES
   jquery-rails
   kaminari
   libv8
-  mercury-rails
   mocha
   mongoid!
   mongoid-simple-tags

@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
+ *= require bootsy
  */
 
 a {
@@ -22,4 +23,8 @@ a {
 
 body {
   padding-top: 70px;
+}
+
+.wysihtml5-sandbox {
+  min-height: 400px;
 }

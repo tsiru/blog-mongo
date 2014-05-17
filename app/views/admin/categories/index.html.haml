@@ -1,0 +1,11 @@
+=link_to 'add category' ,[:new, :admin, :category], class: %i(btn btn-default)
+-if @categories.any?
+  %table.table
+    %thead
+      %tr
+        %th title
+        %th
+        %th posts count
+    %tbody
+      = render collection: @categories, partial: 'table_row', as: :category
+

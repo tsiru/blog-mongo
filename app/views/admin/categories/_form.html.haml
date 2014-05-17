@@ -1,0 +1,6 @@
+=simple_form_for [:admin, category] do |f|
+  =f.input :title
+  =f.submit class: %i(btn btn-default)
+  -if category.persisted?
+    or
+    =render @category.operations(:admin), category: category

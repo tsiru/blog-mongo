@@ -53,8 +53,7 @@ gem 'kaminari'
 # slugs
 gem "mongoid-simple-tags"
 gem 'utf8-cleaner'
-
-gem 'mercury-rails'
+gem 'bootsy'
 
 group :doc do
   gem 'yard', require: false

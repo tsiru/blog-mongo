@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require bootsy
+//= require bootstrap-datepicker
+
+$(document).on('focus', '[data-behaviour~=datepicker]', function(){
+  var input = $(this);
+  if(!input.hasClass('loaded-datepicker'))
+    input.datepicker({format: 'yyyy-mm-d'}).addClass('loaded-datepicker');
+});

@@ -9,3 +9,9 @@
     - path_active admin_posts_path do |path, active|
       =content_tag :li, class: path_active_class(active) do
         =link_to icon(:'file-text-o', 'Posts'), path
+
+-if can? :manage, :categories
+  %ul.nav.nav-sidebar.nav-pills.nav-stacked
+    - path_active admin_categories_path do |path, active|
+      =content_tag :li, class: path_active_class(active) do
+        =link_to icon(:'folder-open-o', 'Categories'), path
