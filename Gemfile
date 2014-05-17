@@ -51,8 +51,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'kaminari'
 
 # slugs
-gem 'friendly_id'
-
+gem "mongoid-simple-tags"
 gem 'utf8-cleaner'
 
 group :doc do

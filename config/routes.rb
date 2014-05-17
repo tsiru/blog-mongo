@@ -3,10 +3,15 @@ Blog::Application.routes.draw do
 
   root to: 'posts#index'
 
+  resources :posts, only: :show
+
   namespace :admin do
     root to: 'dashboard#show'
-    resources :users
-    resources :posts
+    resources :users do
+      post :recover, on: :member
+    end
+    resources :posts, except: :show
+    resources :categories
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

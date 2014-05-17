@@ -1,5 +1,5 @@
-%li=link_to icon(:gears, 'administracja'), admin_root_path if can? :show, Admin
+%li=link_to icon(:gears, 'administration'), admin_root_path if can? :show, Admin
 -if user_signed_in?
-  %li=link_to icon(:'sign-out', 'wyloguj'), destroy_user_session_path, method: :delete
+  %li=link_to icon(:'sign-out', 'sign out'), destroy_user_session_path, method: :delete
 -else
-  %li=link_to icon(:'sign-in', 'zaloguj'), new_user_session_path
+  %li=link_to icon(:'sign-in', 'sign in'), new_user_session_path

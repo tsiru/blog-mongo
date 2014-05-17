@@ -1,3 +1,4 @@
+=link_to 'add user' ,[:new, :admin, :user], class: %i(btn btn-default)
 -if @users.any?
   %table.table
     %thead
@@ -5,8 +6,8 @@
         %th id
         %th
         %th email
-        %th imię
-        %th nazwisko
+        %th first name
+        %th last name
     %tbody
       = render collection: @users, partial: 'table_row', as: :user
 

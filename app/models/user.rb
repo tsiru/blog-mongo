@@ -3,7 +3,7 @@ class User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable #, :validatable
 
   ## Database authenticatable
   field :_id,                type: String, default: -> { "#{first_name} #{last_name}".parameterize }
@@ -27,9 +27,26 @@ class User
   field :last_sign_in_ip,    type: String
 
   validates :first_name, :last_name, :email, presence: true
+  validates :password, presence: true unless :skip_password_validation
+
+  has_many :posts
+
+  after_save :skip_password_validation_reset!
+
+  attr_accessor :skip_password_validation
 
   def humanize
     "#{first_name} #{last_name}"
+  end
+
+  def operations(group = nil)
+    User::Operations.new self, group
+  end
+
+  private
+
+  def skip_password_validation_reset!
+    @skip_password_validation = false
   end
 
   ## Confirmable

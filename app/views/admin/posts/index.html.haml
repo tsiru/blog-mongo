@@ -1,0 +1,13 @@
+=link_to 'add post' ,[:new, :admin, :user], class: %i(btn btn-default)
+-if @posts.any?
+  %table.table
+    %thead
+      %tr
+        %th title
+        %th
+        %th published at
+        %th author
+        %th category
+    %tbody
+      = render collection: @posts, partial: 'table_row', as: :post
+
