@@ -1,7 +1,7 @@
 class Category
   include Mongoid::Document
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   field :_id,   type: String, default: -> { "#{title}".parameterize }
   field :title, type: String

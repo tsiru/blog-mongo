@@ -29,11 +29,11 @@ class User
   validates :first_name, :last_name, :email, presence: true
   validates :password, presence: true unless :skip_password_validation
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   after_save :skip_password_validation_reset!
 
-  scope :authors, -> { where(:id.in => Post.pluck(:author) ) }
+  scope :authors, -> { where(:id.in => Post.pluck(:author).uniq ) }
 
   attr_accessor :skip_password_validation
 
