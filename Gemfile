@@ -9,7 +9,8 @@ gem 'responders'
 # database
 gem 'yaml_db'
 gem 'mongoid', github: 'mongoid/mongoid'
-
+gem "will_paginate_mongoid"
+gem 'will_paginate-bootstrap'
 
 # frontend
 gem 'jquery-rails'

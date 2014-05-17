@@ -1,0 +1,5 @@
+%h3 Add comment!
+=simple_form_for(@comment, url: post_comments_path(post_id: @post.id)) do |f|
+  =f.input :body, as: :text
+  =f.input :author
+  =f.submit class: %i(btn btn-default)

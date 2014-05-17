@@ -5,6 +5,7 @@ module Admin
     before_filter :add_post_breadcrumb, except: :index
 
     def index
+      @posts = @posts.ordered.page(params[:page])
       respond_with @posts
     end
 

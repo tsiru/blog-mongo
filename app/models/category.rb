@@ -8,7 +8,11 @@ class Category
 
   validates :title, presence: true
 
-  delegate :count, to: :posts, prefix: true
+  scope :ordered, -> { order_by :title.asc }
+
+  def posts_count
+    posts.published.count
+  end
 
   def humanize
     "#{title}"

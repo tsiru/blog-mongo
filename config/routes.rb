@@ -4,17 +4,24 @@ Blog::Application.routes.draw do
 
   root to: 'posts#index', via: :get
 
-  resources :posts, only: :show
-  resources :categories, only: :show
-  resources :users, only: :show
+  resources :posts, only: [:show, :index] do
+    # post :comment, on: :member
+    resources :comments, only: [:create, :destroy]
+  end
 
-  namespace :admin do
-    root to: 'dashboard#show'
-    resources :users do
-      post :recover, on: :member
+  get 'categories/:category', to: 'posts#index', as: :category
+  get 'author/:author',       to: 'posts#index', as: :user
+  get 'tags/:tag',            to: 'posts#index', as: :tag
+
+  authenticate :user do
+    namespace :admin do
+      root to: 'dashboard#show'
+      resources :users do
+        post :recover, on: :member
+      end
+      resources :posts, except: :show
+      resources :categories, except: :show
     end
-    resources :posts, except: :show
-    resources :categories, except: :show
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

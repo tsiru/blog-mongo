@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %meta{content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", name: "viewport"}/
+  %body
+    = render 'layouts/application/navigation/top'
+    .container
+      .row= render 'shared/flash_messages'
+      .row
+        %ol.breadcrumb= render_breadcrumbs tag: :li, separator: ""
+
+      .row
+        .col-sm-3.col-md-2.sidebar
+          = render partial: '/layouts/application/navigation/sidebar'
+        .col-sm-9.col-md-10.main
+          = yield
+    %footer.footer
+      By B. Rapacz, G. Puguła, M. Grzybowski. All posts belongs to
+      = link_to 'inFakt', 'http://www.infakt.pl/blog'
+

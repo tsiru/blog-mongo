@@ -14,4 +14,8 @@ module NavigationHelper
   def path_active_class(path)
     path ? :active : nil
   end
+
+  def paginate(colleciton)
+    will_paginate colleciton, renderer: BootstrapPagination::Rails
+  end
 end

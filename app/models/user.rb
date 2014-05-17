@@ -2,7 +2,7 @@ class User
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, #:registerable,
          :recoverable, :rememberable, :trackable #, :validatable
 
   ## Database authenticatable
@@ -32,6 +32,8 @@ class User
   has_many :posts
 
   after_save :skip_password_validation_reset!
+
+  scope :authors, -> { where(:id.in => Post.pluck(:author) ) }
 
   attr_accessor :skip_password_validation
 

@@ -1,0 +1,22 @@
+%article
+  %h1.page-header=@post.title
+  %div=simple_format @post.lead
+
+  %dl
+    %dt Author
+    %dd=link_to @post.author.humanize, @post.author
+    %dt Category
+    %dd=link_to @post.category.humanize, @post.category
+    %dt Publication date
+    %dd=time_tag @post.published_at
+
+  .article-body=@post.body.html_safe
+  - if @post.tags.any?
+    .tags
+      Słowa kluczowe:
+      = render collection: @post.tags, partial: 'tag', as: :tag
+  %hr/
+  = render 'new_comment' if can? :comment, @post
+  %hr/
+  .article-comments
+    = render partial: @post.comments.ordered, as: :comment

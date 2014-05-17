@@ -5,6 +5,7 @@ module Admin
     before_filter :add_category_breadcrumb, except: :index
 
     def index
+      @categories = @categories.page(params[:page])
       respond_with @categories
     end
 

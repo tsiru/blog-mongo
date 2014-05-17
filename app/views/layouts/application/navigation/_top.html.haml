@@ -1,0 +1,17 @@
+/ Fixed navbar
+.navbar.navbar-default.navbar-fixed-top.navbar-inverse{role: "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      -# = link_to 'Tarnus', root_path, class: 'navbar-brand'
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav
+
+      %ul.nav.navbar-nav.navbar-right
+        -#= render partial: 'application/navigation/basket'
+        = render partial: 'shared/navigation/auth'
+    / /.nav-collapse

@@ -5,6 +5,7 @@ module Admin
     before_filter :add_user_breadcrumb, except: :index
 
     def index
+      @users = @users.page(params[:page])
       respond_with @users
     end
 

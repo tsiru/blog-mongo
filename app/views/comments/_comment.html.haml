@@ -1,0 +1,10 @@
+= link_to 'delete', post_comment_path(comment, post_id: comment.post.id), method: :delete, class: %i(btn btn-danger pull-right), data: { confirm: 'Are U sure?' } if can? :delete, comment
+%h4
+  at
+  =time_tag comment.created_at
+  user
+  %strong=comment.author
+  wrote:
+%blockquote
+  = simple_format comment.body
+

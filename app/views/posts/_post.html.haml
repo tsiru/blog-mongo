@@ -1,0 +1,11 @@
+%article
+  %h2=link_to post.title, post
+  %div=simple_format post.lead
+  %div=link_to 'read more', post
+  %dl
+    %dt Author
+    %dd=link_to post.author.humanize, post.author
+    %dt Category
+    %dd=link_to post.category.humanize, post.category
+    %dt Publication date
+    %dd=time_tag post.published_at
