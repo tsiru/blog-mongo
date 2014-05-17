@@ -1,0 +1,4 @@
+=link_to 'show', [:admin, user], class: %i(btn btn-default)
+=link_to 'edit', [:edit, :admin, user], class: %i(btn btn-default) if can? :edit, user
+=link_to 'destroy', [:admin, user], class: %i(btn btn-danger), method: :delete, data: { confirm: 'Are U sure?' } if can? :destroy, user
+=link_to 'recover password', [:recover, :admin, user], class: %i(btn btn-default), method: :post if can? :recover, user

@@ -1,0 +1,6 @@
+%tr
+  %td=post.title
+  %td=render post.operations, post: post
+  %td=post.published_at
+  %td=link_to post.author.humanize, [:admin, post.author]
+  %td=link_to post.category.humanize, [:admin, post.category]

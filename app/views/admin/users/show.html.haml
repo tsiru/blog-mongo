@@ -1,0 +1,10 @@
+%h1=@user.humanize
+%dl
+  %dt first name
+  %dd=@user.first_name
+  %dt last name
+  %dd=@user.last_name
+  %dt email
+  %dd=mail_to @user.email
+
+=render @user.operations(:admin), user: @user

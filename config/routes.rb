@@ -1,4 +1,5 @@
 Blog::Application.routes.draw do
+  Mercury::Engine.routes
   devise_for :users
 
   root to: 'posts#index'

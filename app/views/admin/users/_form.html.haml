@@ -1,0 +1,8 @@
+=simple_form_for [:admin, user] do |f|
+  =f.input :first_name
+  =f.input :last_name
+  =f.input :email
+  =f.submit class: %i(btn btn-default)
+  -if user.persisted?
+    or
+    =render @user.operations(:admin), user: user

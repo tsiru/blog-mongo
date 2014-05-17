@@ -54,6 +54,8 @@ gem 'kaminari'
 gem "mongoid-simple-tags"
 gem 'utf8-cleaner'
 
+gem 'mercury-rails'
+
 group :doc do
   gem 'yard', require: false
 end

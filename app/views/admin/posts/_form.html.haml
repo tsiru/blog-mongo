@@ -1,0 +1,8 @@
+=simple_form_for [:admin, post] do |f|
+  =f.input :title
+  =f.input :lead, as: :text
+  =f.input :body
+  =f.submit class: %i(btn btn-default)
+  -if post.persisted?
+    or
+    =render @post.operations(:admin), post: post

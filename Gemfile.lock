@@ -140,6 +140,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mercury-rails (0.3.1)
+      coffee-script
+      paperclip
+      rails (>= 3.1.0)
     metaclass (0.0.4)
     mime-types (1.25.1)
     mini_portile (0.6.0)
@@ -310,6 +314,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   libv8
+  mercury-rails
   mocha
   mongoid!
   mongoid-simple-tags
