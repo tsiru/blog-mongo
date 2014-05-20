@@ -39,8 +39,9 @@ namespace :deploy do
   end
 end
 
-before 'deploy:setup',  'rvm:install_rvm'  # install/update RVM
-before 'deploy:setup',  'rvm:install_ruby' # install Ruby and create gemset, OR:
-before 'deploy:update', 'deploy:settings'
-after  'deploy:update', 'deploy:migrate'
-after  'deploy:update', 'deploy:cleanup'
+before 'deploy:setup',   'rvm:install_rvm'  # install/update RVM
+before 'deploy:setup',   'rvm:install_ruby' # install Ruby and create gemset, OR:
+before 'deploy:update',  'deploy:settings'
+after  'deploy:update',  'deploy:migrate'
+after  'deploy:update',  'deploy:cleanup'
+after  'deploy:restart', 'unicorn:restart'
