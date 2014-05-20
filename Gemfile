@@ -35,9 +35,9 @@ gem 'simple_form', '3.1.0.rc1', github: 'plataformatec/simple_form'
 # nawigacja
 gem "breadcrumbs_on_rails"
 
-group :assets do
+# group :assets do
   gem 'uglifier'
-end
+# end
 
 # attachments
 gem "paperclip", "~> 4.1"
@@ -55,6 +55,8 @@ gem 'kaminari'
 gem "mongoid-simple-tags"
 gem 'utf8-cleaner'
 gem 'bootsy'
+
+gem 'nokogiri' # to import infakt/blog posts
 
 group :doc do
   gem 'yard', require: false

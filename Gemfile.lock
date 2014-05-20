@@ -333,6 +333,7 @@ DEPENDENCIES
   mocha
   mongoid!
   mongoid-simple-tags
+  nokogiri
   paperclip (~> 4.1)
   parallel_tests
   protected_attributes
