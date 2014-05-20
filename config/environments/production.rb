@@ -77,5 +77,10 @@ Blog::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'blog-mongo.tsiru.pl' }
+  config.action_mailer.smtp_settings = {
+    openssl_verify_mode:  :none,
+    enable_starttls_auto: false
+  }
 end
