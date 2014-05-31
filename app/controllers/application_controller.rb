@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def load_authors
-    @authors = User.authors.all
+    @authors = User.authors.ordered.all
   end
 end

@@ -34,6 +34,7 @@ class User
   after_save :skip_password_validation_reset!
 
   scope :authors, -> { where(:id.in => Post.pluck(:author).uniq ) }
+  scope :ordered, -> { order_by(:last_name.asc) }
 
   attr_accessor :skip_password_validation
 
